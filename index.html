@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<script>
+
+	function sendLine() {
+	
+	document.getElementById("response").innerHTML=null;
+	var tokentest=document.getElementById("token").value;
+	var message=document.getElementById("msg").value;
+  var res = encodeURI(message);
+  document.getElementById("msgURL").innerHTML = res;
+	var xhr = new XMLHttpRequest();
+	xhr.open("POST", 'notify-api.line.me/api/notify');
+
+	//Send the proper header information along with the request
+	xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	console.log("Token=>"+tokentest);
+	console.log("Message=>"+message.length);
+	xhr.onreadystatechange = function() {//Call a function when the state changes.
+	    if(xhr.readyState == XMLHttpRequest.DONE && xhr.status == 200) {
+	        // Request finished. Do processing here.
+	         document.getElementById("response").innerHTML = this.responseText;
+	    }
+	}
+
+	xhr.send("token="+tokentest+"&msg="+message); 
+	}
+</script>
+
+</body>
+</html>
