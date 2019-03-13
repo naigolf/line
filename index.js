@@ -7,7 +7,7 @@ request({
     'Content-Type': 'application/x-www-form-urlencoded',
   },
   auth: {
-    bearer: 'zH7O77FjUZxv28qIylbQr7CB0PqMrfx8yLnZzbl', //token
+    bearer: 'hCT2D0fMV2NwALN0xYv70wAlcJGXBYMGzUOjT4xs5Nq', //token
   },
   form: {
     message: 'ทดสอบ', //ข้อความที่จะส่ง
